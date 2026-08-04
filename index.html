@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Standalone Monaco Editor</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    #editor-container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Container element where Monaco will render -->
+  <div id="editor-container"></div>
+
+  <!-- Monaco AMD Loader -->
+  <script src="./node_modules/monaco-editor/min/vs/loader.js"></script>
+  
+  <script>
+    // Configure the loader to read local node_modules
+    require.config({ 
+      paths: { vs: './node_modules/monaco-editor/min/vs' } 
+    });
+
+    // Initialize Monaco
+    require(['vs/editor/editor.main'], function () {
+      const container = document.getElementById('editor-container');
+      
+      const editor = monaco.editor.create(container, {
+        value: [
+          'function helloWorld() {',
+          '\tconsole.log("Hello from Monaco inside Electron!");',
+          '}'
+        ].join('\n'),
+        language: 'javascript',
+        theme: 'vs-dark', // Choices: 'vs', 'vs-dark', 'hc-black'
+        automaticLayout: true // Automatically resizes when window scales
+      });
+      
+      // Example: Get text changes from your standalone editor
+      editor.onDidChangeModelContent(() => {
+        const currentCode = editor.getValue();
+        // Send this data upstream or handle autosave
+      });
+    });
+  </script>
+</body>
+</html>

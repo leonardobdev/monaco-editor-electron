@@ -1,0 +1,19 @@
+{
+  "name": "monaco",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "monaco-editor": "^0.56.0"
+  },
+  "devDependencies": {
+    "electron": "^43.2.0"
+  }
+}

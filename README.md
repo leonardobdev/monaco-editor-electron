@@ -10,6 +10,8 @@ Windows: [monaco.exe](https://github.com/leonardobdev/monaco-editor-electron/rel
 
 Linux: [monaco.AppImage](https://github.com/leonardobdev/monaco-editor-electron/releases/download/v1.0.0/monaco.AppImage)
 
+VirusTotal result: [monaco.exe](https://www.virustotal.com/gui/file/d08907380c8feac3ba4dc3adc0ddb480741c0e49b32e9b9071dee834e150b2a9) | [monaco.AppImage](https://www.virustotal.com/gui/file/2465731288dcb11a0efe505edef3dda9c2d32770acb2363fca7df60d017153f6)
+
 ## How to build the project
 
 ```bash
